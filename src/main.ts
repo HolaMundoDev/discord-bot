@@ -1,5 +1,5 @@
 import { Client } from 'discord.js';
-import dotenv from "dotenv"
+import * as dotenv from "dotenv"
 
 const bot = new Client();
 dotenv.config()
