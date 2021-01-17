@@ -1,0 +1,28 @@
+{
+  "name": "holamundo-bot",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "node .",
+    "dev": "nodemon --watch \"./src/**/*.ts\" --exec ts-node src/main.ts",
+    "build": "tsc",
+    "lint": "prettier --check *",
+    "format": "prettier --write src/**/*.ts",
+    "postinstall": "husky install",
+    "pre-commit": "yarn format",
+    "pre-push": "yarn lint"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^14.14.21",
+    "husky": "^5.0.6",
+    "nodemon": "^2.0.7",
+    "prettier": "^2.2.1",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.3"
+  },
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "dotenv": "^8.2.0"
+  }
+}
