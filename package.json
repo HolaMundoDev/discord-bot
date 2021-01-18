@@ -9,8 +9,7 @@
     "lint": "prettier --check *",
     "format": "prettier --write src/**/*.ts",
     "postinstall": "husky install",
-    "pre-commit": "yarn format",
-    "pre-push": "yarn lint"
+    "pre-commit": "yarn format"
   },
   "engines": {
     "node": "14.x",
