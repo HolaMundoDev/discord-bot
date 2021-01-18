@@ -8,13 +8,15 @@ async function AvatarCommand(msg: Message): Promise<void> {
     .setTitle('Avatar')
     .setDescription(
       msg.mentions.users.first()
-        ? `Este es el avatar de ${user.username}`
-        : `${user.username}, Este es tu avatar`
+        ? `Este es el avatar de **${user.username}**`
+        : `**${user.username}**, Este es tu avatar`
     )
     .setImage(
       user.displayAvatarURL({ format: 'png', dynamic: true, size: 1024 })
     );
+  msg.channel.startTyping();
   await msg.channel.send(embed);
+  msg.channel.stopTyping();
 }
 
 export default AvatarCommand;
