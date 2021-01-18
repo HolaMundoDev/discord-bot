@@ -12,6 +12,10 @@
     "pre-commit": "yarn format",
     "pre-push": "yarn lint"
   },
+  "engines": {
+    "node": "14.x",
+    "yarn": ">=1.20"
+  },
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^14.14.21",
