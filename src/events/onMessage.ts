@@ -3,6 +3,7 @@ import { Client, Message } from 'discord.js';
 import AvatarCommand from '../commands/avatar';
 import PingCommand from '../commands/ping';
 import RoleCommand from '../commands/role';
+import WarningCommand from '../commands/warning';
 
 function onMessage(msg: Message, client: Client) {
   if (msg.content.startsWith(config.bot.prefix)) {
@@ -18,6 +19,9 @@ function onMessage(msg: Message, client: Client) {
         break;
       case 'role':
         RoleCommand(msg);
+        break;
+      case 'warning':
+        WarningCommand(msg);
         break;
     }
   }
