@@ -1,17 +1,19 @@
 import { Client } from 'discord.js';
-import * as dotenv from "dotenv"
+import * as dotenv from 'dotenv';
+import config from './config';
+import onMessage from './events/onMessage';
 
-const bot = new Client();
-dotenv.config()
+const client = new Client(); // create new client (bot)
+dotenv.config(); // load dotenv
 
-bot.on('ready', () => {
-    console.log(`Logged in as ${bot.user.tag}!`);
+client.on('ready', async () => {
+  console.log(`Logged in as ${client.user!.tag}!`);
+  await client.user!.setActivity({
+    name: `use '${config.bot.prefix}help' for help`,
+    type: 'PLAYING',
+  });
 });
 
-bot.on('message', (msg) => {
-    if (msg.content === '!ping') {
-        msg.reply('Pong!');
-    }
-});
+client.on('message', (msg) => onMessage(msg, client));
 
-bot.login(process.env.DISCORD_BOT_TOKEN);
+client.login(config.bot.token);

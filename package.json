@@ -23,6 +23,10 @@
   },
   "dependencies": {
     "discord.js": "^12.5.1",
-    "dotenv": "^8.2.0"
+    "dotenv": "^8.2.0",
+    "module-alias": "^2.2.2"
+  },
+  "_moduleAliases": {
+    "@": "dist/"
   }
 }
