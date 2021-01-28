@@ -1,7 +1,7 @@
 {
   "name": "holamundo-bot",
   "version": "1.0.0",
-  "main": "dist/index.js",
+  "main": "./dist/main.js",
   "scripts": {
     "start": "node .",
     "dev": "nodemon --watch \"./src/**/*.ts\" --exec ts-node src/main.ts",
