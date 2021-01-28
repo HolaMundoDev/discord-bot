@@ -8,7 +8,6 @@
     "build": "tsc",
     "lint": "prettier --check *",
     "format": "prettier --write src/**/*.ts",
-    "postinstall": "husky install",
     "pre-commit": "yarn format"
   },
   "engines": {
