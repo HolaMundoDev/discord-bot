@@ -2,8 +2,8 @@ import config from '../config';
 import { Client, Message } from 'discord.js';
 import AvatarCommand from '../commands/avatar';
 import PingCommand from '../commands/ping';
-import RoleCommand from '../commands/role';
-import WarningCommand from '../commands/warning';
+import WarnCommand from '../commands/moderations/warn';
+import UnwarnCommand from '../commands/moderations/unwarn';
 
 function onMessage(msg: Message, client: Client) {
   if (msg.content.startsWith(config.bot.prefix)) {
@@ -17,11 +17,11 @@ function onMessage(msg: Message, client: Client) {
       case 'ping':
         PingCommand(msg, client);
         break;
-      case 'role':
-        RoleCommand(msg);
+      case 'warn':
+        WarnCommand(msg);
         break;
-      case 'warning':
-        WarningCommand(msg);
+      case 'unwarn':
+        UnwarnCommand(msg);
         break;
     }
   }
