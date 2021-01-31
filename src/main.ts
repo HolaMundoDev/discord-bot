@@ -1,8 +1,9 @@
 import { Client } from 'discord.js';
 import * as dotenv from 'dotenv';
-import config from './config';
-import GuildMemberAdd from './events/guildMemberAdd';
-import onMessage from './events/onMessage';
+import 'module-alias/register';
+import config from '@/config';
+import GuildMemberAdd from '@/events/guildMemberAdd';
+import onMessage from '@/events/onMessage';
 
 const client = new Client(); // create new client (bot)
 dotenv.config(); // load dotenv

@@ -1,24 +1,20 @@
 import { MessageEmbed } from 'discord.js';
 
-interface EmbedProps {
-  author?: {
-    name: string;
-    avatar?: string | undefined;
-  };
-  title: string | null;
-  description: string | null;
-  image?: string;
-  color: string;
-}
-
-function Embed({ author, title, description, image, color }: EmbedProps) {
+function Embed({ ...props }: EmbedProps) {
   let embed = new MessageEmbed()
-    .setTitle(title)
-    .setDescription(description)
-    .setColor(color);
+    .setTitle(props.title)
+    .setDescription(props.description)
+    .setColor(props.color)
+    .setTimestamp(props.timestamp || Date.now());
 
-  image ? embed.setImage(image) : null;
-  author ? embed.setAuthor(author?.name, author?.avatar) : null;
+  props.image ? embed.setImage(props.image) : null;
+  props.author
+    ? embed.setAuthor(props.author?.name, props.author?.avatar)
+    : null;
+  props.thumbnail ? embed.setThumbnail(props.thumbnail) : null;
+  props.footer
+    ? embed.setFooter(props.footer?.text, props.footer.iconURL)
+    : null;
 
   return embed;
 }

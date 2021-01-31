@@ -1,7 +1,7 @@
-import { Message } from 'discord.js';
-import Embed from '../../utils/embed';
-import config from '../../config';
-import SendMessage from '../../utils/sendMessage';
+import { Message, TextChannel } from 'discord.js';
+import Embed from '@/utils/embed';
+import config from '@/config';
+import SendMessage from '@/utils/sendMessage';
 
 async function UnwarnCommand(msg: Message): Promise<void> {
   // verify mentions
@@ -20,7 +20,7 @@ async function UnwarnCommand(msg: Message): Promise<void> {
       color: config.bot.color,
     });
 
-    SendMessage(msg, embed, 1000);
+    SendMessage(msg.channel, embed, 1000);
     return;
   } else {
     const userToWarn = msg.mentions.members?.first();
@@ -42,7 +42,7 @@ async function UnwarnCommand(msg: Message): Promise<void> {
         color: config.bot.color,
       });
 
-      SendMessage(msg, embed, 1000);
+      SendMessage(msg.channel, embed, 1000);
       return;
     }
 
@@ -65,8 +65,26 @@ async function UnwarnCommand(msg: Message): Promise<void> {
       description: `Se ha desadvertido correctamente al usuario **${userToWarn?.user.username}**`,
       color: config.bot.color,
     });
+    const moderationsChannel = msg.guild?.channels.cache.get(
+      '790959815060226068'
+    );
+    if (
+      !((moderationsChannel): moderationsChannel is TextChannel =>
+        moderationsChannel?.type === 'text')(moderationsChannel)
+    )
+      return;
 
-    SendMessage(msg, embed, 1000);
+    let moderationEmbed = Embed({
+      title: '¡Desadvertencia!',
+      description: `**Usuario:** ${userToWarn?.user.username}\n**Moderador:** ${
+        msg.author.username
+      }\n**Razón**: ${warnReason || 'No se ha indicado una razón'}`,
+      color: config.bot.color,
+    });
+
+    SendMessage(moderationsChannel, moderationEmbed, 1000);
+    msg.delete({ timeout: 500 });
+    SendMessage(msg.channel, embed, 1000);
     return;
   }
 }

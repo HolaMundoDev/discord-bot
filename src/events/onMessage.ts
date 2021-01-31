@@ -1,9 +1,9 @@
-import config from '../config';
+import config from '@/config';
 import { Client, Message } from 'discord.js';
-import AvatarCommand from '../commands/avatar';
-import PingCommand from '../commands/ping';
-import WarnCommand from '../commands/moderations/warn';
-import UnwarnCommand from '../commands/moderations/unwarn';
+import AvatarCommand from '@/commands/avatar';
+import PingCommand from '@/commands/ping';
+import WarnCommand from '@/commands/moderations/warn';
+import UnwarnCommand from '@/commands/moderations/unwarn';
 
 function onMessage(msg: Message, client: Client) {
   if (msg.content.startsWith(config.bot.prefix)) {

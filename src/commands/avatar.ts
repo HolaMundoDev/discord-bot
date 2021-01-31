@@ -1,7 +1,7 @@
 import { Message, MessageEmbed } from 'discord.js';
-import config from '../config';
-import SendMessage from '../utils/sendMessage';
-import Embed from '../utils/embed';
+import config from '@/config';
+import SendMessage from '@/utils/sendMessage';
+import Embed from '@/utils/embed';
 
 async function AvatarCommand(msg: Message): Promise<void> {
   const user = msg.mentions.users.first() || msg.author;
@@ -22,7 +22,7 @@ async function AvatarCommand(msg: Message): Promise<void> {
     image: user.displayAvatarURL({ format: 'png', dynamic: true, size: 1024 }),
   });
 
-  SendMessage(msg, embed, 1000);
+  SendMessage(msg.channel, embed, 1000);
   return;
 }
 

@@ -1,4 +1,4 @@
-import { Client, Message } from 'discord.js';
+import { Client, Message, TextChannel } from 'discord.js';
 import Embed from '../../utils/embed';
 import config from '../../config';
 import SendMessage from '../../utils/sendMessage';
@@ -46,7 +46,7 @@ async function WarnCommand(msg: Message, _client: Client): Promise<void> {
       return;
     }
 
-    const warnReason = msg.content.split(' ', 3)[2] || undefined;
+    let warnReason: string = msg.content.split(' ', 3)[2];
 
     // warning
     await userToWarn?.roles.add(warnRole, warnReason);
@@ -66,6 +66,25 @@ async function WarnCommand(msg: Message, _client: Client): Promise<void> {
       color: config.bot.color,
     });
 
+    const moderationsChannel = msg.guild?.channels.cache.get(
+      '790959815060226068'
+    );
+    if (
+      !((moderationsChannel): moderationsChannel is TextChannel =>
+        moderationsChannel?.type === 'text')(moderationsChannel)
+    )
+      return;
+
+    let moderationEmbed = Embed({
+      title: '¡Advetencia!',
+      description: `**Usuario:** ${userToWarn?.user.username}\n**Moderador:** ${
+        msg.author.username
+      }\n**Razón**: ${warnReason || 'No se ha indicado una razón'}`,
+      color: config.bot.color,
+    });
+
+    SendMessage(moderationsChannel, moderationEmbed, 1000);
+    msg.delete({ timeout: 500 });
     SendMessage(msg.channel, embed, 1000);
     return;
   }
