@@ -33,7 +33,7 @@ let config = {
       id: '800804889021906945',
       name: 'Silenciado/a',
       private: true,
-    }
+    },
   ],
 };
 

@@ -1,6 +1,7 @@
 import { Client } from 'discord.js';
 import * as dotenv from 'dotenv';
 import config from './config';
+import GuildMemberAdd from './events/guildMemberAdd';
 import onMessage from './events/onMessage';
 
 const client = new Client(); // create new client (bot)
@@ -15,5 +16,6 @@ client.on('ready', async () => {
 });
 
 client.on('message', (msg) => onMessage(msg, client));
+client.on('guildMemberAdd', (member) => GuildMemberAdd(member));
 
 client.login(config.bot.token);

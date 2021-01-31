@@ -18,7 +18,7 @@ function onMessage(msg: Message, client: Client) {
         PingCommand(msg, client);
         break;
       case 'warn':
-        WarnCommand(msg);
+        WarnCommand(msg, client);
         break;
       case 'unwarn':
         UnwarnCommand(msg);
