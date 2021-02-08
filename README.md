@@ -1,27 +1,27 @@
 # HolaMundo Bot
 
-Este repositorio es usado para el desarrollo del bot de la comunidad [HolaMundo](https://discord.gg/sZYgfBJyTm) en discord, para este se usa el lenguaje de progamacion typescript y el entorno de ejecucion nodejs
+Este repositorio contiene el código del bot de Discord hecho para la comunidad de [HolaMundo](https://discord.gg/sZYgfBJyTm), este está escrito usando TypeScript dentro del entorno de NodeJS.
 
 ## Requerimientos
-- NodeJs
-- Yarn (Aunque el proyecto esta optimizado para yarn se pede usar npm)
+- NodeJS
+- Yarn o NPM (Por defecto está Yarn).
 
-## Empezando
-1. Primero debemos instalar las dependencias con el administrador de dependencias yarn de la siguiente manera:
-
+## Primeros Pasos
+1. Antes que nada instalaremos las dependencias del proyecto, usando el comando de abajo:
 ```bash
 yarn install
 # or
 npm install
 ```
-2. Luego debemos crear un bot token en el [portal de discord para desarrolladores](https://discord.com/developers/applications) y crear un archivo llamado `.env` hay vamos a agregar la variable de entorno llamada `BOT_TOKEN` de la siguiente manera
+
+2. Antes de encender el bot debemos crear un token en el [portal de Discord para desarrolladores](https://discord.com/developers/applications) y crear un archivo llamado `.env` en el directorio principal, en el vamos a colocar la variable de entorno `BOT_TOKEN` de la siguiente manera:
 ```env
 # .env
 BOT_TOKEN=mi_token
 ```
-> Nota: debes remplazar mi token por el token que obtuvistes en el portal de discord para desarrolladores
+> NOTA: Reemplaza `mi_token` por el token que obtuviste del portal de Discord para desarrolladores.
 
-3. Ahora si podemos iniciar el bot con el siguiente comando:
+3. Luego de haber configurado nuestro entorno podemos iniciar el bot usando el siguiente comando:
 ```bash
 yarn run dev
 # or 
@@ -29,4 +29,4 @@ npm run dev
 ```
 
 ## Tareas
-Para las tareas del proyecto se usa Github Projects [aqui](https://github.com/JheysonDev/holamundo-bot/projects) podras econtrar tareas en forma de tickets que puedes ir realizando para aportar al desarrollo de este bot
+Para las tareas del proyecto se usa Github Projects [aquí](https://github.com/JheysonDev/holamundo-bot/projects) podrás encontrar tareas en forma de tickets que puedes ir realizando para aportar al desarrollo de este bot.
