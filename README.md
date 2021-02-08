@@ -27,3 +27,6 @@ yarn run dev
 # or 
 npm run dev
 ```
+
+## Tareas
+Para las tareas del proyecto se usa Github Projects [aqui](https://github.com/JheysonDev/holamundo-bot/projects) podras econtrar tareas en forma de tickets que puedes ir realizando para aportar al desarrollo de este bot
