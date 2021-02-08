@@ -6,8 +6,8 @@
     "start": "node .",
     "dev": "tsc-watch --onSuccess \"yarn run start\"",
     "build": "tsc",
-    "lint": "prettier --check *",
-    "format": "prettier --write src/**/*.ts",
+    "lint": "prettier --check src/**/*",
+    "format": "prettier --write src/**/*",
     "pre-commit": "yarn format"
   },
   "engines": {

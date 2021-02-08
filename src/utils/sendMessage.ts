@@ -1,7 +1,7 @@
 import { DMChannel, MessageEmbed, NewsChannel, TextChannel } from 'discord.js';
 
 function sleep(miliseconds: number): Promise<void> {
-  return new Promise((resolve) => setTimeout(resolve, miliseconds));
+  return new Promise(resolve => setTimeout(resolve, miliseconds));
 }
 
 async function SendMessage(
