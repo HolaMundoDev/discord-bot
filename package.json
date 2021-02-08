@@ -6,9 +6,11 @@
     "start": "node .",
     "dev": "tsc-watch --onSuccess \"yarn run start\"",
     "build": "tsc",
-    "lint": "prettier --check *",
-    "format": "prettier --write src/**/*.ts",
-    "pre-commit": "yarn format"
+    "lint": "prettier --check src/**/*",
+    "format": "prettier --write src/**/*",
+    "pre-commit": "yarn format",
+    "pre-push": "yarn lint",
+    "postinstall": "husky install"
   },
   "engines": {
     "node": "14.x",
