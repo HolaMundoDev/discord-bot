@@ -35,6 +35,10 @@ let config = {
       private: true,
     },
   ],
+  channels: {
+    rules: '789293321960554517',
+    welcome: '791070017877442600',
+  },
 };
 
 export default config;

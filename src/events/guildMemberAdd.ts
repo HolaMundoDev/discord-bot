@@ -1,11 +1,12 @@
-// import SendMessage from "@/utils/sendMessage";
 import config from '@/config';
 import Embed from '@/utils/embed';
 import SendMessage from '@/utils/sendMessage';
 import { GuildMember, TextChannel } from 'discord.js';
 
-function GuildMemberAdd(member: GuildMember) {
-  const welcomeChannel = member.guild.channels.cache.get('791070017877442600');
+async function GuildMemberAdd(member: GuildMember) {
+  const welcomeChannel = member.guild.channels.cache.get(
+    config.channels.welcome
+  );
   if (!welcomeChannel) return;
 
   if (
@@ -15,16 +16,12 @@ function GuildMemberAdd(member: GuildMember) {
     return;
 
   let embed = Embed({
-    author: {
-      name: member.user.username,
-      avatar: member.user.displayAvatarURL({
-        format: 'webp',
-        dynamic: false,
-        size: 32,
-      }),
-    },
     title: 'Nuevo miembro',
-    description: 'asd',
+    description: `hola ${
+      member.user.tag
+    }, bienvenido a **HolaMundo** un servidor de programacion donde prestamos aprendizaje a toda hora cuando sea posible. tenemos reglas para mantener la conducta de los usuarios si quieres saber como son pasate por <#${member.guild.channels.cache
+      .has(config.channels.rules)
+      .toString()}>. y que tengas un buen dia`,
     color: config.bot.color,
     thumbnail: member.user.displayAvatarURL({
       format: 'png',
@@ -33,7 +30,7 @@ function GuildMemberAdd(member: GuildMember) {
     }),
   });
 
-  SendMessage(welcomeChannel, embed, 1000);
+  await SendMessage(welcomeChannel, embed, 1000);
 }
 
 export default GuildMemberAdd;
