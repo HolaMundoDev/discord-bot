@@ -12,16 +12,16 @@ function onMessage(msg: Message, client: Client) {
 
     switch (commandName) {
       case 'avatar':
-        AvatarCommand(msg);
+        AvatarCommand.run(msg, client);
         break;
       case 'ping':
-        PingCommand(msg, client);
+        PingCommand.run(msg, client);
         break;
       case 'warn':
-        WarnCommand(msg, client);
+        WarnCommand.run(msg, client);
         break;
       case 'unwarn':
-        UnwarnCommand(msg);
+        UnwarnCommand.run(msg, client);
         break;
     }
   }

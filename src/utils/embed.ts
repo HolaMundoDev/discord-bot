@@ -1,6 +1,6 @@
 import { MessageEmbed } from 'discord.js';
 
-function Embed({ ...props }: EmbedProps) {
+function Embed({ ...props }: EmbedProps): MessageEmbed {
   let embed = new MessageEmbed()
     .setTitle(props.title)
     .setDescription(props.description)
