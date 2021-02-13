@@ -2,7 +2,7 @@ import { Message, TextChannel } from 'discord.js';
 import Embed from '@/utils/embed';
 import config from '@/config';
 import SendMessage from '@/utils/sendMessage';
-import { Command } from '@/@types/commands';
+import { Command } from '@/types/commands';
 
 const UnwarnCommand: Command = {
   name: 'unwarn',

@@ -1,5 +1,5 @@
 import { Client, Message } from 'discord.js';
-import { Command } from '@/@types/commands';
+import { Command } from '@/types/commands';
 import SendMessage from '@/utils/sendMessage';
 
 const PingCommand: Command = {
