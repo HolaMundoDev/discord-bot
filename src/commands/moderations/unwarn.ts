@@ -21,7 +21,7 @@ const UnwarnCommand: Command = {
             format: 'webp',
           }),
         },
-        title: 'Mencion requerida',
+        title: 'Mención requerida',
         description: `No se ha mencionado el usuario que sera advertido`,
         color: config.bot.color,
       });

@@ -22,7 +22,7 @@ const WarnCommand: Command = {
             format: 'webp',
           }),
         },
-        title: 'Mencion requerida',
+        title: 'Mención requerida',
         description: `No se ha mencionado el usuario que sera advertido`,
         color: config.bot.color,
       });
@@ -83,7 +83,7 @@ const WarnCommand: Command = {
         return;
 
       let moderationEmbed = Embed({
-        title: '¡Advetencia!',
+        title: '¡Advertencia!',
         description: `**Usuario:** ${
           userToWarn?.user.username
         }\n**Moderador:** ${message.author.username}\n**Razón**: ${
