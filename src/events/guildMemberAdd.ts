@@ -1,7 +1,8 @@
+import { GuildMember, TextChannel } from 'discord.js';
+
 import config from '@/config';
 import Embed from '@/utils/embed';
 import SendMessage from '@/utils/sendMessage';
-import { GuildMember, TextChannel } from 'discord.js';
 
 async function GuildMemberAdd(member: GuildMember) {
   const welcomeChannel = member.guild.channels.cache.get(

@@ -1,8 +1,10 @@
 import { Message, TextChannel } from 'discord.js';
-import Embed from '../../utils/embed';
-import config from '../../config';
-import SendMessage from '../../utils/sendMessage';
+
 import { Command } from '@/types/commands';
+
+import config from '../../config';
+import Embed from '../../utils/embed';
+import SendMessage from '../../utils/sendMessage';
 
 const WarnCommand: Command = {
   name: 'warn',
