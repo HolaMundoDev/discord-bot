@@ -1,4 +1,4 @@
-import { Message } from 'discord.js';
+import { Message, TextChannel } from 'discord.js';
 
 import { Command } from '@/types/commands';
 
@@ -42,6 +42,15 @@ const UnbanCommand: Command = {
       description: `Se ha desbaneado correctamente al usuario **${userToUnban?.user.username}**`,
     });
 
+    const moderationsChannel = message.guild?.channels.cache.get(
+      '790959815060226068'
+    );
+    if (
+      !((moderationsChannel): moderationsChannel is TextChannel =>
+        moderationsChannel?.type === 'text')(moderationsChannel)
+    )
+      return;
+
     const unbanReason: string = message.content.split(' ', 3)[2];
     const embed = Embed({
       title: '!Unban!',
@@ -53,7 +62,7 @@ const UnbanCommand: Command = {
       color: config.bot.color,
     });
 
-    SendMessage(message.channel, moderationEmbed, 1000);
+    SendMessage(moderationsChannel, moderationEmbed, 1000);
     message.delete({ timeout: 500 });
     SendMessage(message.channel, embed, 1000);
   },
