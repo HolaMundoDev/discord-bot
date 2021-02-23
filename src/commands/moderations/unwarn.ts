@@ -1,8 +1,9 @@
 import { Message, TextChannel } from 'discord.js';
-import Embed from '@/utils/embed';
+
 import config from '@/config';
+import { Command } from '@/types/commands';
+import Embed from '@/utils/embed';
 import SendMessage from '@/utils/sendMessage';
-import { Command } from '@/@types/commands';
 
 const UnwarnCommand: Command = {
   name: 'unwarn',
@@ -20,7 +21,7 @@ const UnwarnCommand: Command = {
             format: 'webp',
           }),
         },
-        title: 'Mencion requerida',
+        title: 'Mención requerida',
         description: `No se ha mencionado el usuario que sera advertido`,
         color: config.bot.color,
       });

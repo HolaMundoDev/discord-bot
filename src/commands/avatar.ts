@@ -1,8 +1,9 @@
-import { Message, MessageEmbed } from 'discord.js';
+import { Message } from 'discord.js';
+
 import config from '@/config';
-import SendMessage from '@/utils/sendMessage';
+import { Command } from '@/types/commands';
 import Embed from '@/utils/embed';
-import { Command } from '@/@types/commands';
+import SendMessage from '@/utils/sendMessage';
 
 const AvatarCommand: Command = {
   name: 'avatar',

@@ -1,8 +1,10 @@
 import { Message, TextChannel } from 'discord.js';
-import Embed from '../../utils/embed';
+
+import { Command } from '@/types/commands';
+
 import config from '../../config';
+import Embed from '../../utils/embed';
 import SendMessage from '../../utils/sendMessage';
-import { Command } from '@/@types/commands';
 
 const WarnCommand: Command = {
   name: 'warn',
@@ -20,7 +22,7 @@ const WarnCommand: Command = {
             format: 'webp',
           }),
         },
-        title: 'Mencion requerida',
+        title: 'Mención requerida',
         description: `No se ha mencionado el usuario que sera advertido`,
         color: config.bot.color,
       });
@@ -81,7 +83,7 @@ const WarnCommand: Command = {
         return;
 
       let moderationEmbed = Embed({
-        title: '¡Advetencia!',
+        title: '¡Advertencia!',
         description: `**Usuario:** ${
           userToWarn?.user.username
         }\n**Moderador:** ${message.author.username}\n**Razón**: ${
