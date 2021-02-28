@@ -1,17 +1,18 @@
 import discord
-import os
+from discord.ext import commands
+from settings import settings
 
-class HolaMundo(discord.Client):
-    async def on_ready(self):
-        print('Logged on as', self.user)
 
-    async def on_message(self, message):
-        # don't respond to ourselves
-        if message.author == self.user:
-            return
+def main():
+    # Create bot
+    bot = commands.Bot(command_prefix=settings["prefix"], description="Hola Mundo bot")
 
-        if message.content == 'ping':
-            await message.channel.send('pong')
+    @bot.event
+    async def on_ready():
+        print(f"Initial as {bot.user}")
 
-client = HolaMundo()
-client.run(os.getenv("BOT_TOKEN"))
+    bot.run(settings["token"])
+
+
+if __name__ == "__main__":
+    main()

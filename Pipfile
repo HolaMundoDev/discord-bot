@@ -5,11 +5,18 @@ name = "pypi"
 
 [scripts]
 start = "python src/main.py"
+format = "black src/"
+lint = "flake8 src/**/*.py"
 
 [packages]
 discord.py="1.6.0"
 
 [dev-packages]
+black = "20.8b1"
+flake8 = "3.8.4"
 
 [requires]
 python_version = "3.9"
+
+[pipenv]
+allow_prereleases = true
