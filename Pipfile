@@ -6,7 +6,7 @@ name = "pypi"
 [scripts]
 start = "python src/main.py"
 format = "black src/"
-lint = "flake8 src/**/*.py"
+lint = "flake8 src/"
 
 [packages]
 discord.py="1.6.0"
