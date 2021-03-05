@@ -12,6 +12,10 @@
     "format": "prettier --check src/**/*",
     "lint": "prettier --write src/**/*"
   },
+  "engines": {
+    "node": "14.x",
+    "yarn": ">=1.22"
+  },
   "private": true,
   "dependencies": {
     "discord.js": "^12.5.1"
