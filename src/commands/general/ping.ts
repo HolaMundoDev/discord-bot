@@ -1,6 +1,6 @@
-import { CommandInt } from "@/@types/commands";
-import { HolaMundoInt } from "@/@types/main";
-import Embed from "../../utils/embed";
+import { CommandInt } from "../../@types/commands";
+import { HolaMundoInt } from "../../@types/main";
+import Embed from "../../utils/Embed";
 import SendMessage from "../../utils/SendMessage";
 
 const PingCommand: CommandInt = {

@@ -1,5 +1,5 @@
-import { HolaMundoInt } from "@/@types/main";
-import Embed from "../utils/embed";
+import { HolaMundoInt } from "../@types/main";
+import Embed from "../utils/Embed";
 import { Message } from "discord.js";
 
 async function OnMessage(message: Message, HolaMundo: HolaMundoInt) {
