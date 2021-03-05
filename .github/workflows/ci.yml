@@ -4,7 +4,7 @@ on: [pull_request, push]
 
 jobs:
   lint:
-    name: Lint in ${{ matrix.os }}
+    name: Linting in ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -23,31 +23,5 @@ jobs:
       - name: Install Dependencies
         run: yarn install --frozen-lockfile
 
-      - name: Lint Code (prettier)
-        run: yarn run format
-
-      - name: Lint Code (eslint)
+      - name: Lint Code
         run: yarn run lint
-
-  format:
-    name: Format in ${{ matrix.os }}
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 1
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: "14"
-
-      - name: Install Dependencies
-        run: yarn install --frozen-lockfile
-
-      - name: Format Code
-        run: yarn run format:write
