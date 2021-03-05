@@ -1,0 +1,24 @@
+{
+  "name": "holamundo-bot",
+  "version": "0.0.1-dev",
+  "description": "Discord bot for HolaMundo community",
+  "main": "dist/main.js",
+  "repository": "https://github.com/HolaMundoDev/discord-bot.git",
+  "author": "HolaMundo Contributors",
+  "license": "GPL-3.0",
+  "scripts": {
+    "start": "node .",
+    "build": "tsc",
+    "dev": "tsc-watch --onSuccess \"node .\""
+  },
+  "private": true,
+  "dependencies": {
+    "discord.js": "^12.5.1"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.31",
+    "dotenv": "^8.2.0",
+    "tsc-watch": "^4.2.9",
+    "typescript": "^4.2.2"
+  }
+}
