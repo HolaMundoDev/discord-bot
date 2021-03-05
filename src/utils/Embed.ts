@@ -1,5 +1,5 @@
-import { HolaMundoInt } from "@/@types/main";
-import { EmbedProps } from "@/@types/utils";
+import { HolaMundoInt } from "../@types/main";
+import { EmbedProps } from "../@types/utils";
 import { MessageEmbed } from "discord.js";
 
 /**
